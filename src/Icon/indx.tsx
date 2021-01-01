@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react'
+import images from '../assets/index';
 
 interface IconProps {
-  src: string,
+  type?: string,
+  src?: string,
   size?: number,
   interval?: number,
 }
@@ -12,10 +14,14 @@ interface RetrunProps {
   style: React.CSSProperties
 }
 
-export function useIcon({ src, size = 64, interval = 20 }: IconProps): RetrunProps {
+export function useIcon({ type, src, size = 64, interval = 20 }: IconProps): RetrunProps {
   const [y, setY] = useState(0)
 
   const [direction, setDirection] = useState(0)
+
+  const url = type !== undefined
+  ? images[type] || images['ai']
+  : src
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -53,7 +59,7 @@ export function useIcon({ src, size = 64, interval = 20 }: IconProps): RetrunPro
       ...defaultStyles,
       width: size + 'px',
       height: size + 'px',
-      backgroundImage: `url(${src})`,
+      backgroundImage: `url(${url})`,
       backgroundPosition: '0 0',
       backgroundPositionY: y
     }
