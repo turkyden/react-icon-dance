@@ -5,19 +5,19 @@ A icon dance style cpmponent deved with react.
 ## 📦 Install
 
 ```bash
-yarn add icon-c4d
+yarn add react-icon-dance
 ```
 
 or you can:
 
 ```bash
-npm install icon-c4d
+npm install react-icon-dance
 ```
 
 ## 🚀 Usage
 
 ```jsx | pure
-import Icon from 'icon-c4d';
+import Icon from 'react-icon-dance';
 import icon from '../assets/icon.png';
 
 function App() {

@@ -1,1 +1,5 @@
-export { default as Foo } from './Foo';
+import Icon, { useIcon } from './Icon/indx';
+
+export default Icon;
+
+export { useIcon };

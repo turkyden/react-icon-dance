@@ -7,5 +7,11 @@ export default defineConfig({
   outputPath: 'docs-dist',
   base: `/react-icon-dance/`,
   publicPath: process.env.NODE_ENV === 'production' ? '/react-icon-dance/' : '/',
+  theme: {
+    '@c-primary': '#ff6a00',
+  },
+  styles: [
+    'https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/utilities.min.css',
+  ],
   // more config: https://d.umijs.org/config
 });
