@@ -1,6 +1,6 @@
-# Getting Started
+## Changelog
 
-A icon dance style cpmponent deved with react.
+A icon c4d style cpmponent deved with react.
 
 ## 📦 Install
 
@@ -37,28 +37,12 @@ function App() {
 
 ## 🔨 Contribute
 
-Install dependencies,
-
 ```bash
-$ npm i
+yarn install
 ```
 
-Start the dev server,
-
 ```bash
-$ npm start
-```
-
-Build documentation,
-
-```bash
-$ npm run docs:build
-```
-
-Build library via `father-build`,
-
-```bash
-$ npm run build
+yarn start
 ```
 
 ## License
