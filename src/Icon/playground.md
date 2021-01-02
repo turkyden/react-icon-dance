@@ -19,7 +19,7 @@ export default () => {
 
   const [interval, setInterval] = useState(20);
 
-  const [src, setSrc] = useState(window.location.origin + icon);
+  const [src, setSrc] = useState(icon);
 
   return (
     <div className="flex">

@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "private": false,
   "name": "react-icon-dance",
   "version": "1.0.0",
   "scripts": {
