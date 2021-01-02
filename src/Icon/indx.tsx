@@ -8,20 +8,18 @@ interface IconProps {
   interval?: number,
 }
 
-interface RetrunProps {
+interface IconDanceProps {
   onMouseOver: (e: any) => void,
   onMouseOut: (e: any) => void,
   style: React.CSSProperties
 }
 
-export function useIcon({ type, src, size = 64, interval = 20 }: IconProps): RetrunProps {
+export function useIcon({ type, src, size = 64, interval = 20 }: IconProps): IconDanceProps {
   const [y, setY] = useState(0)
 
   const [direction, setDirection] = useState(0)
 
-  const url = type !== undefined
-  ? images[type] || images['ai']
-  : src
+  const url = (type && images[type]) || src || images['ai']; 
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -47,7 +45,6 @@ export function useIcon({ type, src, size = 64, interval = 20 }: IconProps): Ret
 
   const defaultStyles = {
     display: 'block',
-    cursor: 'pointer',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
   }
@@ -67,9 +64,11 @@ export function useIcon({ type, src, size = 64, interval = 20 }: IconProps): Ret
 }
 
 export default function Icon(iconProps: IconProps) {
-  const props = useIcon(iconProps)
+  const iconDanceProps = useIcon(iconProps);
+
+  const props = { ...iconProps, ...iconDanceProps };
 
   return (
-    <div { ...props as RetrunProps }/>
+    <div { ...props } />
   )
 }

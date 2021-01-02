@@ -11,6 +11,8 @@ import images from './assets/index.ts';
 
 export default () => {
 
+  console.log(images)
+
   const [size, setSize] = useState(96);
 
   const [interval, setInterval] = useState(20);
@@ -19,7 +21,7 @@ export default () => {
     <div className="flex flex-wrap">
       {
         Object.values(images).map(src => (
-          <div className="w-1/4 h-64 bg-white shadow-inner flex flex-col justify-center items-center">
+          <div className="w-1/4 h-64 bg-white shadow-inner flex flex-col justify-center items-center" key={src}>
             <Icon size={size} interval={interval} src={src} />
           </div>
         ))

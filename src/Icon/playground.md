@@ -11,7 +11,6 @@ You can wrap the icon with your customize tag under the react hook `useIcon`.
  */
 import React, { useState } from 'react';
 import Icon from 'react-icon-dance';
-import icon from './icon.png';
 
 export default () => {
 
@@ -19,7 +18,7 @@ export default () => {
 
   const [interval, setInterval] = useState(20);
 
-  const [src, setSrc] = useState(icon);
+  const [src, setSrc] = useState('https://cdn.jsdelivr.net/gh/turkyden/react-icon-dance@master/src/assets/@aliyun/ai.png');
 
   return (
     <div className="flex">

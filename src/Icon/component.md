@@ -31,9 +31,10 @@ export default () => (
 ```tsx
 import React from 'react';
 import Icon from 'react-icon-dance';
-import icon from './icon.png';
 
-export default () => <Icon src={icon} />;
+const src = 'https://cdn.jsdelivr.net/gh/turkyden/react-icon-dance@master/src/assets/@aliyun/ai.png';
+
+export default () => <Icon src={src} />;
 ```
 
 ## Size
@@ -41,13 +42,14 @@ export default () => <Icon src={icon} />;
 ```tsx
 import React from 'react';
 import Icon from 'react-icon-dance';
-import icon from './icon.png';
+
+const src = 'https://cdn.jsdelivr.net/gh/turkyden/react-icon-dance@master/src/assets/@aliyun/ai.png';
 
 export default () => (
   <div className="flex space-x-6">
-    <Icon size={48} src={icon} />
-    <Icon size={64} src={icon} />
-    <Icon size={96} src={icon} />
+    <Icon size={48} src={src} />
+    <Icon size={64} src={src} />
+    <Icon size={96} src={src} />
   </div>
 );
 ```
@@ -57,13 +59,14 @@ export default () => (
 ```tsx
 import React from 'react';
 import Icon from 'react-icon-dance';
-import icon from './icon.png';
+
+const src = 'https://cdn.jsdelivr.net/gh/turkyden/react-icon-dance@master/src/assets/@aliyun/ai.png';
 
 export default () => (
   <div className="flex space-x-6">
-    <Icon interval={0} src={icon} />
-    <Icon interval={20} src={icon} />
-    <Icon interval={40} src={icon} />
+    <Icon interval={0} src={src} />
+    <Icon interval={20} src={src} />
+    <Icon interval={40} src={src} />
   </div>
 );
 ```
