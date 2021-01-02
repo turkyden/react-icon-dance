@@ -1,7 +1,4 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react'
-import images from '../assets/index';
-
-type Images = { [K in string]: string };
 
 interface IconProps {
   type?: string,
@@ -16,13 +13,14 @@ interface IconDanceProps {
   style: React.CSSProperties
 }
 
-
 export function useIcon({ type, src, size = 64, interval = 20 }: IconProps): IconDanceProps {
   const [y, setY] = useState(0)
 
   const [direction, setDirection] = useState(0)
 
-  const url = (type && (images as Images)[type]) || src || images['ai']; 
+  const typeUrl = type && `https://cdn.jsdelivr.net/gh/turkyden/react-icon-dance@master/src/assets/@aliyun/${type}.png`;
+
+  const url =  typeUrl || src; 
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -72,6 +70,6 @@ export default function Icon(iconProps: IconProps) {
   const props = { ...iconProps, ...iconDanceProps };
 
   return (
-    <div { ...props } />
+    <i { ...props } />
   )
 }

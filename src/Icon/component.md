@@ -1,15 +1,6 @@
-# Component
+# 🗳️ Component
 
-The `<Icon />` is wrapped by `<div>`.
-
-## Default
-
-```tsx
-import React from 'react';
-import Icon from 'react-icon-dance';
-
-export default () => <Icon />; // <Icon type="ai" />
-```
+The `<Icon />` is wrapped with html tag and defaulted `<i>`.
 
 ## Type
 
@@ -18,55 +9,63 @@ import React from 'react';
 import Icon from 'react-icon-dance';
 
 export default () => (
-  <div className="flex space-x-6">
+  <div style={{ display: 'flex', justifyContent: 'space-around', width: '20rem' }}>
     <Icon type="ai" />
     <Icon type="big_data" />
     <Icon type="cdn" />
   </div>
-); 
+);
 ```
 
 ## Src
 
+You can customize your icon url with the `src` properties.
+
 ```tsx
 import React from 'react';
 import Icon from 'react-icon-dance';
 
-const src = 'https://cdn.jsdelivr.net/gh/turkyden/react-icon-dance@master/src/assets/@aliyun/ai.png';
-
-export default () => <Icon src={src} />;
+export default () => (
+  <div style={{ display: 'flex', justifyContent: 'space-around', width: '20rem' }}>
+    <Icon src="https://cdn.jsdelivr.net/gh/turkyden/react-icon-dance@master/src/assets/@aliyun/cloud_essentials.png" />
+    <Icon src="https://cdn.jsdelivr.net/gh/turkyden/react-icon-dance@master/src/assets/@aliyun/cloud_native.png" />
+    <Icon src="https://cdn.jsdelivr.net/gh/turkyden/react-icon-dance@master/src/assets/@aliyun/dev_ops.png" />
+  </div>
+);
 ```
 
 ## Size
 
+You can customize the `size` of your icon under the premise of ensuring the `quality` of the picture.
+
 ```tsx
 import React from 'react';
 import Icon from 'react-icon-dance';
 
-const src = 'https://cdn.jsdelivr.net/gh/turkyden/react-icon-dance@master/src/assets/@aliyun/ai.png';
-
 export default () => (
-  <div className="flex space-x-6">
-    <Icon size={48} src={src} />
-    <Icon size={64} src={src} />
-    <Icon size={96} src={src} />
+  <div style={{ display: 'flex', justifyContent: 'space-around', width: '20rem' }}>
+    <Icon type="ai" size={48} />
+    <Icon type="ai" size={64} />
+    <Icon type="ai" size={96} />
   </div>
 );
 ```
 
 ## Interval
 
+The speed of icon animate `interval`.
+
 ```tsx
 import React from 'react';
 import Icon from 'react-icon-dance';
 
-const src = 'https://cdn.jsdelivr.net/gh/turkyden/react-icon-dance@master/src/assets/@aliyun/ai.png';
-
 export default () => (
-  <div className="flex space-x-6">
-    <Icon interval={0} src={src} />
-    <Icon interval={20} src={src} />
-    <Icon interval={40} src={src} />
+  <div style={{ display: 'flex', justifyContent: 'space-around', width: '20rem' }}>
+    <Icon type="ai" interval={0} />
+    <Icon type="ai" interval={20} />
+    <Icon type="ai" interval={40} />
   </div>
 );
 ```
+
+Tips: (fast `0`) -> (middle `20`) -> (slow `40`)

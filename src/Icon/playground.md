@@ -1,8 +1,8 @@
-# Playground
+# ✨ Playground
 
 You can wrap the icon with your customize tag under the react hook `useIcon`.
 
-## Try it
+## Try it now
 
 ```tsx
 /**
@@ -11,6 +11,7 @@ You can wrap the icon with your customize tag under the react hook `useIcon`.
  */
 import React, { useState } from 'react';
 import Icon from 'react-icon-dance';
+import assets from '../assets/index.ts';
 
 export default () => {
 
@@ -21,49 +22,67 @@ export default () => {
   const [src, setSrc] = useState('https://cdn.jsdelivr.net/gh/turkyden/react-icon-dance@master/src/assets/@aliyun/ai.png');
 
   return (
-    <div className="flex">
-      <div className="w-2/3 h-96 bg-gray-100 shadow-inner flex flex-col justify-center items-center">
-        <Icon size={size} interval={interval} src={src} />
-      </div>
-      <section className="w-1/3 pl-8 py-2">
-        <div className="w-64 h-64">
-          <h3 className="text-lg pb-4">Customize</h3>
-          <p className="py-2 flex justify-between items-center">
-            <span className="text-gray-500">Size</span>
-            <span className="text-gray-800">{size} px</span>
-          </p>
-          <input
-            type="range"
-            className="w-full"
-            min={24}
-            max={160}
-            value={size}
-            onChange={e => setSize(e.target.value)}
-          />
-          <p className="py-2 flex justify-between items-center">
-            <span className="text-gray-500">Interval</span>
-            <span className="text-gray-800">{interval} ms</span>
-          </p>
-          <input
-            type="range"
-            className="w-full"
-            min={0}
-            max={40}
-            value={interval}
-            onChange={e => setInterval(e.target.value)}
-          />
-          <p className="py-2 flex justify-between items-center">
-            <span className="text-gray-500">Src</span>
-          </p>
-          <input
-            type="text"
-            className="w-full"
-            value={src}
-            onChange={e => setSrc(e.target.value)}
-          />
+    <>
+      <div className="flex">
+        <div className="w-2/3 h-96 flex">
+          <div className="w-full h-full bg-gray-100 shadow-inner flex flex-col justify-center items-center text-gray-400 pattern-dots-sm">
+            <Icon size={size} interval={interval} src={src} />
+          </div>
+          <div className="w-28 h-full bg-gray-100 overflow-auto text-gray-300 pattern-grid-sm">
+            <img className="w-full" src={src} />
+          </div>
         </div>
-      </section>
-    </div>
+        <section className="w-1/3 pl-8">
+          <div className="w-64 h-64">
+            <h3 className="text-lg pb-4">Customize</h3>
+            <p className="py-2 flex justify-between items-center">
+              <span className="text-gray-500">Size</span>
+              <span className="text-gray-800">{size} px</span>
+            </p>
+            <input
+              type="range"
+              className="w-full"
+              min={24}
+              max={160}
+              value={size}
+              onChange={e => setSize(e.target.value)}
+            />
+            <p className="py-2 flex justify-between items-center">
+              <span className="text-gray-500">Interval</span>
+              <span className="text-gray-800">{interval} ms</span>
+            </p>
+            <input
+              type="range"
+              className="w-full"
+              min={0}
+              max={40}
+              value={interval}
+              onChange={e => setInterval(e.target.value)}
+            />
+            <p className="py-2 flex justify-between items-center">
+              <span className="text-gray-500">Src</span>
+            </p>
+            <input
+              type="text"
+              className="w-full"
+              value={src}
+              onChange={e => setSrc(e.target.value)}
+            />
+          </div>
+        </section>
+      </div>
+      <div className="flex flex-wrap w-5/6 py-10">
+        {
+          Object.values(assets).map(src => (
+            <div className="flex flex-wrap flex-col justify-center items-start" key={src} onClick={e => setSrc(src)}>
+              <div className="border border-solid border-transparent hover:border-gray-200 rounded-lg p-8 cursor-pointer">
+                <Icon size={64} interval={20} src={src} />
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </>
   )
 };
 ```
