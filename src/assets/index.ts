@@ -27,18 +27,18 @@ import storage from'./@aliyun/storage.png';
 import video from'./@aliyun/video.png';
 
 export default {
-  'ai': ai,
-  'big_data': big_data,
-  'cdn': cdn,
-  'cloud_essentials': cloud_essentials,
-  'cloud_native': cloud_native,
-  'dev_ops': dev_ops,
-  'enterprise_service': enterprise_service,
-  'hybrid_cloud': hybrid_cloud,
-  'iot': iot,
-  'product_list': product_list,
-  'product_outline': product_outline,
-  'security': security,
-  'storage': storage,
-  'video': video
+  'ai': ai as string,
+  'big_data': big_data as string,
+  'cdn': cdn as string,
+  'cloud_essentials': cloud_essentials as string,
+  'cloud_native': cloud_native as string,
+  'dev_ops': dev_ops as string,
+  'enterprise_service': enterprise_service as string,
+  'hybrid_cloud': hybrid_cloud as string,
+  'iot': iot as string,
+  'product_list': product_list as string,
+  'product_outline': product_outline as string,
+  'security': security as string,
+  'storage': storage as string,
+  'video': video as string
 }

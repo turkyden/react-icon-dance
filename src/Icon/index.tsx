@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react'
 import images from '../assets/index';
 
+type Images = { [K in string]: string };
+
 interface IconProps {
   type?: string,
   src?: string,
@@ -14,12 +16,13 @@ interface IconDanceProps {
   style: React.CSSProperties
 }
 
+
 export function useIcon({ type, src, size = 64, interval = 20 }: IconProps): IconDanceProps {
   const [y, setY] = useState(0)
 
   const [direction, setDirection] = useState(0)
 
-  const url = (type && images[type]) || src || images['ai']; 
+  const url = (type && (images as Images)[type]) || src || images['ai']; 
 
   useEffect(() => {
     const timer = window.setInterval(() => {
