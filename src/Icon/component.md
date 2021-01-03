@@ -51,6 +51,8 @@ export default () => (
 );
 ```
 
+Tips: the util of size is `px`
+
 ## Interval
 
 The speed of icon animate `interval`.

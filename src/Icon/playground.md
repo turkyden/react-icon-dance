@@ -10,8 +10,11 @@ You can wrap the icon with your customize tag under the react hook `useIcon`.
  * inline: true
  */
 import React, { useState } from 'react';
+import { Upload, message, Button } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
 import Icon from 'react-icon-dance';
 import assets from '../assets/index.ts';
+import 'antd/dist/antd.css';
 
 export default () => {
 
@@ -68,6 +71,28 @@ export default () => {
               value={src}
               onChange={e => setSrc(e.target.value)}
             />
+            <p className="py-2 flex justify-between items-center">
+              <span className="text-gray-500">Upload</span>
+            </p>
+            <Upload
+              name='file'
+              action='https://www.mocky.io/v2/5cc8019d300000980a055e76'
+              headers={{
+                authorization: 'authorization-text'
+              }}
+              onChange={(info) => {
+                if (info.file.status !== 'uploading') {
+                  console.log(info.file, info.fileList);
+                }
+                if (info.file.status === 'done') {
+                  message.success(`${info.file.name} file uploaded successfully`);
+                } else if (info.file.status === 'error') {
+                  message.error(`${info.file.name} file upload failed.`);
+                }
+              }}
+            >
+              <Button icon={<UploadOutlined />}>Click to Upload</Button>
+            </Upload>
           </div>
         </section>
       </div>
@@ -82,6 +107,7 @@ export default () => {
           ))
         }
       </div>
+      <h3 className="text-gray-500 text-center">Comming soon ...</h3>
     </>
   )
 };

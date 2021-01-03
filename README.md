@@ -1,6 +1,11 @@
 # Getting Started
 
-A icon dance style cpmponent deved with react.
+[![npm](https://img.shields.io/npm/v/react-icon-dance?color=orange)](https://www.npmjs.com/package/react-image-dangling)&nbsp;
+[![dumi](https://img.shields.io/badge/docs%20by-dumi-blue)](https://github.com/umijs/dumi)&nbsp;
+[![jsdelivr](https://data.jsdelivr.com/v1/package/npm/react-icon-dance/badge)](https://www.jsdelivr.com/package/npm/react-icon-dance)&nbsp;
+![License](https://img.shields.io/npm/l/react-icon-dance?style=flat-square&color=red)&nbsp;
+
+An icon dance style cpmponent deved with react.
 
 ## 📦 Install
 
@@ -17,12 +22,31 @@ npm install react-icon-dance
 ## 🚀 Usage
 
 ```jsx | pure
+import React from 'react';
 import Icon from 'react-icon-dance';
-import icon from '../assets/icon.png';
 
 function App() {
   return (
-    <Icon size={64} interval={10} src={icon} />
+    <Icon type="ai" size={64} interval={10} />
+  )
+}
+```
+
+or you can created by the React Hook `useIcon`
+
+```jsx | pure
+import React from 'react';
+import { useIcon } from 'react-icon-dance';
+
+function App() {
+  const iconProps = useIcon({
+    type: 'ai', 
+    size: 64,
+    interval: 10
+  })
+
+  return (
+    <i { ...iconProps } />
   )
 }
 ```
@@ -31,10 +55,15 @@ function App() {
 
 | Params     | Description                                  | Type     | Default |
 |------------|:----------------------------------------------|:----------|:---------|
-| async | The async properties of extarnal resources `<script>` | `boolean` | true       |
-| media | The media properties of extarnal resources `<link>`, support `all`/`screen`/`print`/`handheld` | `string` | all       |
-| target | The DOM or Refs of container which need to load the `<img>` | `HTMLElement` \| `(() => HTMLElement)` \| `MutableRefObject` | -      |
+| type | The media properties of extarnal resources `<link>`, support `all`/`screen`/`print`/`handheld` | `string` | all       |
+| src | The async properties of extarnal resources `<script>` | `string` | 'ai'       |
+| size | The DOM or Refs of container which need to load the `<img>` | `HTMLElement` \| `(() => HTMLElement)` \| `MutableRefObject` | -      |
+| interval | The DOM or Refs of container which need to load the `<img>` | `HTMLElement` \| `(() => HTMLElement)` \| `MutableRefObject` | -      |
+| frame | The DOM or Refs of container which need to load the `<img>` | `HTMLElement` \| `(() => HTMLElement)` \| `MutableRefObject` | 20      |
 
+### 🔢 Coming Soon
+
+- autoPlay
 ## 🔨 Contribute
 
 Install dependencies,
