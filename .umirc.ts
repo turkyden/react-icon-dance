@@ -6,8 +6,8 @@ export default defineConfig({
   logo: 'https://turkyden.com/img/logo.svg',
   hash: true,
   outputPath: 'docs-dist',
-  base: `/react-icon-dance/`,
-  publicPath: process.env.NODE_ENV === 'production' ? 'https://cdn.jsdelivr.net/gh/turkyden/react-icon-dance@gh-pages/' : '/',
+  base: `/`,
+  publicPath: '/',
   theme: {
     '@c-primary': '#ff6a00',
   },
