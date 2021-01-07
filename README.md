@@ -1,11 +1,11 @@
 # Getting Started
 
-[![npm](https://img.shields.io/npm/v/react-icon-dance?color=orange)](https://www.npmjs.com/package/react-image-dangling)&nbsp;
-[![dumi](https://img.shields.io/badge/docs%20by-dumi-blue)](https://github.com/umijs/dumi)&nbsp;
-[![jsdelivr](https://data.jsdelivr.com/v1/package/npm/react-icon-dance/badge)](https://www.jsdelivr.com/package/npm/react-icon-dance)&nbsp;
-![License](https://img.shields.io/npm/l/react-icon-dance?style=flat-square&color=red)&nbsp;
+An icon dance style cpmponent deved with react. [Docs](https://react-icon-dance.vercel.app/)
 
-An icon dance style cpmponent deved with react.
+[![npm](https://img.shields.io/npm/v/react-icon-dance?color=orange)](https://www.npmjs.com/package/react-image-dangling)
+[![dumi](https://img.shields.io/badge/docs%20by-dumi-blue)](https://github.com/umijs/dumi)
+[![jsdelivr](https://data.jsdelivr.com/v1/package/npm/react-icon-dance/badge)](https://www.jsdelivr.com/package/npm/react-icon-dance)
+![License](https://img.shields.io/npm/l/react-icon-dance?style=flat-square&color=red)
 
 ## 📦 Install
 
